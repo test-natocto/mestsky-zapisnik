@@ -13,18 +13,8 @@ const cities = fs
   .readdirSync(path.join(__dirname, "faqs"))
   .map(city => `/${city}`);
 
-const routerBase =
-  process.env.DEPLOY_ENV === "GH_PAGES"
-    ? {
-        router: {
-          base: "/mestsky-zapisnik/"
-        }
-      }
-    : {};
-
 module.exports = {
   mode: "spa",
-  ...routerBase,
   head: {
     meta: [
       { charset: "utf-8" },
@@ -44,7 +34,14 @@ module.exports = {
   generate: {
     routes: cities
   },
+  router: {
+    mode: "hash",
+    base: process.env.DEPLOY_ENV === "GH_PAGES" ? "/mestsky-zapisnik/" : "/"
+  },
   css: ["~/assets/tailwind.css", "~/assets/app.css"],
+  manifest: {
+    lang: "cs"
+  },
   build: {
     extractCSS: true,
     postcss: [
