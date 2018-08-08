@@ -1,0 +1,21 @@
+.page-enter-active, .page-leave-active,
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s ease;
+}
+.page-enter, .page-leave-active,
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+}
+
+.highlight {
+  background: yellow;
+}
+
+.faq h2 {
+  color: #252525;
+  margin-bottom: 0.75rem;
+}
+
+.faq ul {
+  padding-left: 2rem;
+}
