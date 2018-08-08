@@ -14,6 +14,9 @@ install:
   - npm install
   - npm run generate:gh-pages
 
+script:
+- echo "skipping tests"
+
 deploy:
   provider: pages
   skip-cleanup: true
