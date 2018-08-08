@@ -28,6 +28,7 @@
         class="font-mono p-5 text-lg mt-2 mb-8 shadow appearance-none border rounded w-full"
         v-model="search"
         type="text"
+        aria-label="Vyhledávání"
         placeholder="Zadejte hledaný text.."
       >
 
