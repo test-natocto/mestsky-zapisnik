@@ -3,15 +3,19 @@
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/pwa": "^2.0.8",
-    "nuxt-edge": "^2.0.0-25560616.24daeba",
-    "vue-text-highlight": "^1.1.2"
+    "nuxt-edge": "^2.0.0-25560616.24daeba"
   },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
+    "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "glob-all": "^3.1.0",
     "html-loader": "^0.5.5",
     "markdown-loader": "^3.0.0",

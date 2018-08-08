@@ -1,5 +1,5 @@
 <template>
-  <main class="container mx-auto px-4">
+  <main class="container">
     <h2 class="text-4xl pb-4">
       Nadpis
     </h2>

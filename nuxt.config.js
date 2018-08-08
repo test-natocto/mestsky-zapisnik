@@ -13,8 +13,18 @@ const cities = fs
   .readdirSync(path.join(__dirname, "faqs"))
   .map(city => `/${city}`);
 
+const routerBase =
+  process.env.DEPLOY_ENV === "GH_PAGES"
+    ? {
+        router: {
+          base: "/mestsky-zapisnik/"
+        }
+      }
+    : {};
+
 module.exports = {
   mode: "spa",
+  ...routerBase,
   head: {
     meta: [
       { charset: "utf-8" },
